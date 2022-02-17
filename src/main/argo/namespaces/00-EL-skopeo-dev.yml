@@ -1,0 +1,9 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: EventListener
+metadata:
+  name: skopeo-dev-eventlistener
+  namespace: skopeo-dev
+spec:
+  serviceAccountName: pipeline
+  triggers:
+    - triggerRef: skopeo-dev-trigger

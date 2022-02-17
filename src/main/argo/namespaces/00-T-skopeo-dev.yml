@@ -1,0 +1,11 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: Trigger
+metadata:
+  name: skopeo-dev-trigger
+  namespace: skopeo-dev
+spec:
+  serviceAccountName: pipeline
+  bindings:
+    - ref: skopeo-dev-triggerbinding
+  template:
+    ref: skopeo-dev-triggertemplate
